@@ -18,6 +18,7 @@ html {
 
 body {
 	padding-top: 60px;
+	padding-left: 30px;
 }
 
 section {
@@ -65,6 +66,9 @@ p {
 
 /* header */
 
+nav {
+	float: right;
+}
 
 #logo {
   float: left;
@@ -74,6 +78,7 @@ p {
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
+  padding-left: 10px;
   font-weight: bold;
   line-height: 1;
   &:hover {
@@ -189,6 +194,37 @@ input {
 	margin-left: 2em;
 }
 
+/*Microposts*/
+
+.microposts {
+	list-style: none;
+	margin: 10px 0 0 0;
+	li {
+		padding: 10px 0;
+		border-top: 1px solid #e8e8e8;
+		&:last-child {
+			border-bottom: 1px solid #e8e8e8;
+		}
+	}
+}
+.content {
+	display: block;
+}
+.timestamp {
+	color: $grayLight;
+	font-size: 0.9em;
+}
+.gravatar {
+	float: left;
+	margin-right: 10px;
+}
+aside {
+	textarea {
+		height: 100px;
+		margin-bottom: 5px;
+	}
+}
+
 /* Miscellaneous */
 
 .debug_dump {
@@ -204,7 +240,10 @@ input {
 }
 
 
-
+/* errors */
+#error_explanation {
+	color: red;
+}
 
 
 
