@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 	has_many :relationships, foreign_key: "follower_id", dependent: :destroy
 	has_many :followed_users, through: :relationships, source: :followed
 	has_many :reversed_relationships, foreign_key: "followed_id",
-										class_name: "Relationship",
+									   class_name: "Relationship",
 										dependent: :destroy
 	has_many :followers, through: :reversed_relationships, source: :follower
 
@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 	validates :password, length: { minimum: 6 }, presence: true
 	
 	def feed
-		Micropost.where("user_id = ?", id)
+		Micropost.from_users_followed_by(self)
 	end
 
 	def follow!(other_user)

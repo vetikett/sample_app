@@ -8,13 +8,18 @@
 	<% if signed_in? %>
 		<div class="row">
 			<%= render 'static_pages/post_home' %>
+			
 			<div class="span8 feed">
 				<h3>Microposts</h3>
 				<%= render 'shared/feed' %>
 			</div>
 		</div>	
+	
 	<% else %>
+
 		<%= render 'static_pages/not_loged_in_home' %>
+	
 	<% end %>
+	
 	</body>
 </html>
